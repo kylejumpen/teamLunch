@@ -35,19 +35,16 @@ public class RestaurantService {
 	}
 
 	public void createRestaurant(Restaurant restaurant) {
-		//Maybe we should log when creating
 		Restaurant restaurantSaved = restaurantRepository.save(restaurant);
 		logger.info("Restaurant added : {} .",restaurantSaved);
 	}
 
 	public void deleteRestaurant(Restaurant restaurant) {
-		//Maybe we should log when deleting
 		restaurantRepository.delete(restaurant);
 		logger.info("Restaurant deleted : {} .",restaurant);
 	}
 
 	public synchronized void updateRestaurant(Restaurant restaurant) {
-		//Only update name not reviews
 		restaurantRepository.save(restaurant);
 		logger.info("Restaurant updated : {} .",restaurant);
 	}

@@ -37,6 +37,7 @@ public class PollService {
 		pollRepository.save(poll);
 	}
 
+	//TODO : PERSONALIZED EXCEPTION
 	public void cancelPoll(int id) throws Exception {
 		Poll pollById = pollRepository.findById(id).orElseThrow(() -> new Exception("NotFound"));
 		pollById.setStatus(CANCELLED);
